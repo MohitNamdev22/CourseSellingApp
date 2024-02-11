@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import {Typography} from '@mui/material'
 
-function Signup(){
+function Signin(){
     return <div>
         <center>
         <div style={{
@@ -11,7 +11,7 @@ function Signup(){
             marginBottom:10
         }}> <Typography variant={"h6"}>
             Welcome back!
-            Let's get you signed up
+            Let's get you signed in
             </Typography>
         </div>
         </center>
@@ -23,9 +23,9 @@ function Signup(){
               <TextField fullWidth={true} id="outlined-basic" label="Password" variant="outlined" />
 
         <br/><br/>
-        <Button size={"large"} variant="contained" style={{}}>Sign Up</Button>        </Card>
+        <Button size={"large"} variant="contained" style={{}}>Sign In</Button>        </Card>
             </center>
     </div>
 }
 
-export default Signup;
+export default Signin;
