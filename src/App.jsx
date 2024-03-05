@@ -8,8 +8,8 @@ import AddCourse from './AddCourse';
 function App() {
     return (
       <div style={{width:"100vW", height:"100vh", backgroundColor:"#EEEEEE"}} >
-        <Appbar/>
         <Router>
+        <Appbar/>
             <Routes>
                 <Route path={"/addcourse"} element={<AddCourse />}/>
                 <Route path="/login" element={<Signin />} />
