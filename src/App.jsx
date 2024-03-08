@@ -4,6 +4,7 @@ import Signin from './Signin';
 import Signup from './Signup';
 import Appbar from './Appbar';;
 import AddCourse from './AddCourse';
+import Courses from './Courses';
 
 function App() {
     return (

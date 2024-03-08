@@ -50,36 +50,36 @@ function Appbar(){
             </div>
         </div>
     }
-
-
-
-    return <div style={{
-        display:"flex",
-        justifyContent:"space-between",
-        padding:4
-    }}>
-        <div>
-        <Typography variant={"h6"}>
-            Coursera
-        </Typography>
-        </div>
-        <div style={{display:"flex"}}>
-            <div style={{marginRight:10}}>
-        <Button variant={"contained"} 
-        onClick={()=>{
-            navigate("/signup")
-        }}
-        >Sign up</Button>
-            </div>
+    else{
+        return <div style={{
+            display:"flex",
+            justifyContent:"space-between",
+            padding:4
+        }}>
             <div>
-        <Button variant={"contained"} 
-        onClick={()=>{
-            navigate("/login")
-        }}
-        >Sign in</Button>
+            <Typography variant={"h6"}>
+                Coursera
+            </Typography>
+            </div>
+            <div style={{display:"flex"}}>
+                <div style={{marginRight:10}}>
+            <Button variant={"contained"} 
+            onClick={()=>{
+                navigate("/signup")
+            }}
+            >Sign up</Button>
+                </div>
+                <div>
+            <Button variant={"contained"} 
+            onClick={()=>{
+                navigate("/signin  ")
+            }}
+            >Sign in</Button>
+                </div>
             </div>
         </div>
-    </div>
+    }
+
 }
 
 export default Appbar;

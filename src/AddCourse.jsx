@@ -32,7 +32,7 @@ function AddCourse() {
             variant="contained"
             onClick={() => {
                 function callback2(data) {
-                    localStorage.setItem("token", data.token);
+                    alert("course has been added")
                     console.log(data.token)
                 }
                 function callback1(res) {
