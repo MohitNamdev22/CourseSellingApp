@@ -39,7 +39,7 @@ function Course(){
 
     return <div>
         <CourseCard course={course}/>
-        <UpdateCard course={course}/>
+        <UpdateCard courses={courses} course={course} setCourses={setCourses}/>
     </div>
 }
 
@@ -85,8 +85,22 @@ function UpdateCard(props){
             variant="contained"
             onClick={() => {
                 function callback2(data) {
-                    alert("course has been added")
+                    alert("course has been updated")
                     console.log(data.token)
+                    let updatedCourses = [];
+                    for (let i=0; i<props.courses.length; i++){
+                        if(props.courses[i].id==course.id){
+                        updatedCourses.push( {
+                            id:course.id,
+                            title:title,
+                            description:description,
+                            imageLink:image
+                        })
+                    } else{
+                        updatedCourses.push(props.courses[i])
+                    }
+                  }
+                  props.setCourses(updatedCourses);
                 }
                 function callback1(res) {
                     res.json().then(callback2)
@@ -113,7 +127,8 @@ function UpdateCard(props){
 
         function CourseCard(props){
             const course = props.course;
-            return <Card style={{
+            return <div style={{display:"flex", justifyContent:"center"}}>
+            <Card style={{
                 margin:10,
                 width:300,
                 minHeight:200,
@@ -123,6 +138,7 @@ function UpdateCard(props){
                 <Typography textAlign={"center"} variant="subtitle1">{course.description}</Typography>
                 <img src={course.imageLink} style={{width:300}}></img>
             </Card>
+            </div>
 }
 
 export default Course;
