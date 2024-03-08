@@ -6,6 +6,7 @@ import {useState} from "react";
 function AddCourse() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [image,setImage] = useState();
 
     return <div style={{display: "flex", justifyContent: "center"}}>
         <Card varint={"outlined"} style={{width: 400, padding: 20}}>
@@ -27,6 +28,15 @@ function AddCourse() {
             variant="outlined"
         />
 
+        <TextField
+            onChange={(e) => {
+                setImage(e.target.value)
+            }}
+            fullWidth={true}
+            label="Image link"
+            variant="outlined"
+        />
+
         <Button
             size={"large"}
             variant="contained"
@@ -43,7 +53,7 @@ function AddCourse() {
                     body: JSON.stringify({
                         title: title,
                         description: description,
-                        imageLink: "",
+                        imageLink: image,
                         published: true
                     }),
                     headers: {
