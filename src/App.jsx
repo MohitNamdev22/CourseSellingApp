@@ -6,10 +6,18 @@ import Appbar from './Appbar';;
 import AddCourse from './AddCourse';
 import Courses from './Courses';
 import Course from './Course';
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+} from 'recoil';
 
 function App() {
     return (
       <div style={{width:"100vW", height:"100vh", backgroundColor:"#EEEEEE"}} >
+        <RecoilRoot>
         <Router>
         <Appbar/>
             <Routes>
@@ -20,6 +28,7 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
             </Routes>
         </Router>
+        </RecoilRoot>
         </div>
     );
 }
