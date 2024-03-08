@@ -33,7 +33,7 @@ justifyContent:"center"}
     </div>
 }
 
-function Course(props){
+export function Course(props){
     return <Card style={{
         margin:10,
         width:300,
