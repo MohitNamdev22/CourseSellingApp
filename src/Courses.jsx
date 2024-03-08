@@ -1,3 +1,4 @@
+import { Card, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -5,7 +6,7 @@ function Courses(){
     const [courses, setCourses] = useState([]);
     useEffect(() => {
         function callback2(data) {
-            console.log(data);
+            setCourses(data.courses);
         }
     
         function callback1(res) {
@@ -23,7 +24,21 @@ function Courses(){
    
    return <div>
         Courses
+        {courses.map(course =>{ 
+        return <Course course={course}/>}
+        )}
     </div>
+}
+
+function Course(props){
+    return <Card style={{
+        margin:10,
+        width:300,
+        minHeight:200
+    }}>
+        <Typography textAlign={"center"} variant="h6">{props.course.title} </Typography>
+        <Typography textAlign={"center"} variant="subtitle1">{props.course.description}</Typography>
+    </Card>
 }
 
 export default Courses;
