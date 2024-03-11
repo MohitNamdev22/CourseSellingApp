@@ -75,7 +75,7 @@ function UpdateCard(props){
             variant="contained"
             onClick={() => {
                 function callback2(data) {
-                    alert("course has been updated")
+                    alert("The course has been updated")
                     console.log(data.token)
                     let updatedCourses = [];
                     for (let i=0; i<courses.length; i++){
